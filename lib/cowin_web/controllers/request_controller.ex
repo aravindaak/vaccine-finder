@@ -3,7 +3,7 @@ defmodule CowinWeb.RequestController do
   import HTTPoison
 
   @url "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?"
-  @token "1814386693:AAGvaWhW92LnXJrwfHvb7iYZNoCjfL7vqdA"
+  @token System.get_env("TELE_TOKEN")
 
   def index(conn, _opts) do
     Telegram.Api.request(@token, "sendMessage",
